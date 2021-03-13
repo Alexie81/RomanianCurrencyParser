@@ -27,6 +27,7 @@ def text2int(textnum, numwords={}):
 
     ordinal_words = {'primul': 1, 'aldoilea': 2, 'altreilea': 3, 'alcincilea': 5, 'aloptulea': 8, 'alnoulea': 9,
                      'aldoisprecelea': 12}
+    
     ordinal_endings = [('lea', ''), ('a', 'a')]
 
     textnum = textnum.replace('si', ' ')
@@ -41,13 +42,7 @@ def text2int(textnum, numwords={}):
 
     textnum = textnum.replace('opt', 'opt')
     textnum = textnum.replace('noua', 'noua')
-    # textnum = textnum.replace('sute', ' sute ')
-    # textnum = textnum.replace('suta', ' suta ')
-    #
-    # textnum = textnum.replace('zece', 'zece ')
-    # textnum = textnum.replace('mii', ' mii ')
-    # textnum = textnum.replace('zeci', 'zeci ')
-    # textnum = textnum.replace('mie', ' mie ')
+
     for idx, word in enumerate(scales):  textnum = textnum.replace(word, ' '+word+' ')
 
     # }
