@@ -62,7 +62,7 @@ def text2int(textnum, numwords={}):
                     word = "%s%s" % (word[:-len(ending)], replacement)
 
             if word not in numwords:
-                raise Exception("Illegal word: " + word)
+                raise Exception("Cuvantul: '" + word + "', nu este recunoscut!")
 
             scale, increment = numwords[word]
 
@@ -73,6 +73,5 @@ def text2int(textnum, numwords={}):
     number = result + current
 
     return number
-
-print("Numarul este: ")
-print(text2int("omie"))
+x = str(text2int("douamii"))
+print("Numarul este: " + x)
