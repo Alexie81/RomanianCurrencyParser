@@ -6,6 +6,9 @@ def text2int(textnum, numwords={}):
             "noua": 9, "zece": 10, "unsprezece": 11, "doisprezece": 12, "treisprezece": 13, "paisprezece": 14,
             "cincisprezece": 15,
             "saisprezece": 16, "saptesprezece": 17, "optsprezece": 18, "nouasprezece": 19}
+
+        # Just for dict
+
         units1 = [
             "un ", "o", "noua"
         ]
@@ -15,10 +18,16 @@ def text2int(textnum, numwords={}):
             "paisprezece", "cincisprezece", "saisprezece", "saptesprezece", "optsprezece", "nouasprezece", "sute", "mie"
         ]
 
-        tens = ["", "", "douazeci", "treizeci", "patruzeci", "cincizeci", "saizeci", "saptezeci", "optzeci", "nouazeci"]
+        # End
 
+        # Zeci
+        tens = ["", "", "douazeci", "treizeci", "patruzeci", "cincizeci", "saizeci", "saptezeci", "optzeci", "nouazeci"]
+        # End
+
+        # Numere ordinale
         scales = {"suta": 2, "sute": 2, "mie": 3, "mii": 3, "milioane": 6, "milion": 6, "miliarde": 9, "miliard": 9,
                   "trilioane": 12, "trilion": 12, "quatralioane": 15, "quatralion": 15}
+        # End
 
         for idx, word in enumerate(units):  numwords[word] = (1, units[word])
         for idx, word in enumerate(tens):   numwords[word] = (1, idx * 10)
@@ -27,7 +36,7 @@ def text2int(textnum, numwords={}):
 
     ordinal_words = {'primul': 1, 'aldoilea': 2, 'altreilea': 3, 'alcincilea': 5, 'aloptulea': 8, 'alnoulea': 9,
                      'aldoisprecelea': 12}
-    
+
     ordinal_endings = [('lea', ''), ('a', 'a')]
 
     textnum = textnum.replace('si', ' ')
@@ -68,5 +77,5 @@ def text2int(textnum, numwords={}):
     number = result + current
 
     return number
-x = str(text2int("douamii"))
+x = str(text2int("doi"))
 print("Numarul este: " + x)
