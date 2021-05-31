@@ -24,7 +24,7 @@ def text2int(textnum, numwords={}):
         tens = ["", "", "douazeci", "treizeci", "patruzeci", "cincizeci", "saizeci", "saptezeci", "optzeci", "nouazeci"]
         # End
 
-        # Numere ordinale
+        # Numerale cardinale
         scales = {"suta": 2, "sute": 2, "mie": 3, "mii": 3, "milioane": 6, "milion": 6, "miliarde": 9, "miliard": 9,
                   "trilioane": 12, "trilion": 12, "quatralioane": 15, "quatralion": 15}
         # End
@@ -34,8 +34,24 @@ def text2int(textnum, numwords={}):
         for idx, word in enumerate(scales):
             numwords[word] = (10 ** scales[word], 0)
 
-    ordinal_words = {'primul': 1, 'aldoilea': 2, 'altreilea': 3, 'alcincilea': 5, 'aloptulea': 8, 'alnoulea': 9,
-                     'aldoisprecelea': 12}
+        # Numerale ordinale
+        ordinal_words = {
+            'primul': 1,
+            'aldoilea': 2,
+            'altreilea': 3,
+            'alcincilea': 5,
+            'aloptulea': 8, 'alnoulea': 9,
+            'aldoisprecelea': 12,
+            'altreisprezecelea': 13,
+            'alpaisprezecelea': 14,
+            'alcincisprezecelea': 15,
+            'alsaisprezecelea': 16,
+            'alsaptesprezecelea': 17,
+            'aloptsprezecelea': 18,
+            'alnouasprezecelea': 19
+        }
+        # End
+
 
     ordinal_endings = [('lea', ''), ('a', 'a')]
 
@@ -77,5 +93,6 @@ def text2int(textnum, numwords={}):
     number = result + current
 
     return number
-x = str(text2int("doi"))
+x = str(text2int("altreisprezecelea"))
+# afiseaza numarul
 print("Numarul este: " + x)
