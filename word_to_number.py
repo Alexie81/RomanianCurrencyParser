@@ -93,6 +93,8 @@ def text2int(textnum, numwords={}):
     number = result + current
 
     return number
-x = str(text2int("altreisprezecelea"))
+
+
+x = str(text2int("treimilioanesaptesutedouazecidemiisinouazeci"))
 # afiseaza numarul
 print("Numarul este: " + x)
